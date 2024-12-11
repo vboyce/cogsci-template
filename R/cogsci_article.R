@@ -9,13 +9,14 @@
 #' @export
 
 cogsci_paper <- function(keep_tex = TRUE,
-                           includes = NULL) {
+                           includes = NULL, latex_engine="xelatex") {
 
     template <- find_resource("cogsci_paper_2024", "template.tex")
 
     base <- rmarkdown::pdf_document(template = template,
                                     keep_tex = keep_tex,
-                                    includes = includes)
+                                    includes = includes,
+                                    latex_engine=latex_engine)
 
     # Mostly copied from knitr::render_sweave
     base$knitr$opts_knit$out.format <- "sweave"
