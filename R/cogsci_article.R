@@ -11,7 +11,7 @@
 cogsci_paper <- function(keep_tex = TRUE,
                            includes = NULL) {
 
-    template <- find_resource("cogsci_paper_2016", "template.tex")
+    template <- find_resource("cogsci_paper_2024", "template.tex")
 
     base <- rmarkdown::pdf_document(template = template,
                                     keep_tex = keep_tex,
