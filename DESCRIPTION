@@ -1,4 +1,4 @@
-Package: cogsci2016
+Package: cogsci2024
 Title: Create CogSci Proceedings Submission with RMarkdown
 Version: 1.0.0.1
 Authors@R: person("Kyle", "MacDonald", email = "kylem412@gmail.com", role = c("aut", "cre"))
