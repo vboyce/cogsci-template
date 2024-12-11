@@ -14,29 +14,29 @@
 
 % Modified from earlier style files published by P.F. Patel-Schneider
 % and others for IJCAI-89, AAAI-90, COGSCI-91, and other conferences.
-%
+% 
 % Ashwin Ram, ashwin@cc.gatech.edu, 4/1/94
 
 % Modified : Eli M. Silk (esilk@pitt.edu)            05/24/2005
 
 % Author information can be set in various styles.  For several
-% authors from the same institution use:
-%
+% authors from the same institution use: 
+% 
 % \author{Author 1 \and ... \and Author n \\
 %         Address line \\ ... \\ Address line}
-%
+% 
 % If the names do not fit well on one line use:
-%
+% 
 %         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
-%
+% 
 % For authors from different institutions:
-%
+% 
 % \author{Author 1 \\ Address line \\  ... \\ Address line
 %         \And  ... \And
 %         Author n \\ Address line \\ ... \\ Address line}
-%
+% 
 % To start a seperate ``row'' of authors use \AND, as in
-%
+% 
 % \author{Author 1 \\ Address line \\  ... \\ Address line
 %         \AND
 %         Author 2 \\ Address line \\ ... \\ Address line \And
@@ -62,35 +62,21 @@
 %   7in textwidth,
 %   9.25in textheight
 
-\setlength\oddsidemargin{-0.25in}
-\setlength\textheight{9.25in}
-\setlength\textwidth{7in}
-\setlength\columnsep{0.25in}
-\setlength\headheight{0pt}
-\setlength\headsep{0pt}
+\RequirePackage[letterpaper,
+left=.75in,
+top=1in,
+width=7in,
+height=9.25in,
+footskip=0in,
+columnsep=.25in]{geometry}
 
-
-\ifx\pdfoutput\@undefined
-\setlength\topmargin{0.75in}
-\else
-\setlength\topmargin{0in}
-\setlength\pdfpagewidth{8.5in}
-\setlength\pdfpageheight{11in}
-\fi
-
-
-
-% Now we want page numbers
-
-\setlength\footskip{0pt}
-%\setlength\footheight{0pt}
 
 \thispagestyle{empty}
 \pagestyle{empty}
 % \pagestyle{plain}
 
-\flushbottom
-\twocolumn
+\flushbottom 
+\twocolumn 
 \sloppy
 
 
@@ -107,8 +93,8 @@
 
 
 % Use Times fonts by default
-%%\RequirePackage{pslatex}
-
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 
 % We're never going to need a table of contents, so just flush it to
 % save space --- suggested by drstrip@sandia-2
@@ -125,8 +111,8 @@
 	\else \iftwopagesummary
              \bf\@author
         \else
-        {\bf \large Anonymous CogSci submission} % Avoiding common accidental de-anonymization issue. --MM
-        \fi % 1/4/18 fixed bug for submitting final de-anonymized version - KM
+             {\bf \large Anonymous CogSci submission} % Avoiding common accidental de-anonymization issue. --MM
+        \fi
 	\fi
     \end{tabular}}
 
@@ -147,14 +133,14 @@
       \centering
           {\LARGE\bf \@title \par} \vskip 1em%
           {\def\and{\unskip\enspace{\rm and}\enspace}%
-            \def\And{\end{tabular}\hss \egroup \hskip 1in plus 2fil
+            \def\And{\end{tabular}\hss \egroup \hskip 1in plus 2fil 
            \hbox to 0pt\bgroup\hss \begin{tabular}[t]{c}}%
             \def\AND{\end{tabular}\hss\egroup \hfil\hfil\egroup
            \vskip 1em
            \hbox to \linewidth\bgroup \hfil\hfil
            \hbox to 0pt\bgroup\hss \begin{tabular}[t]{c}}
             \hbox to \linewidth\bgroup \hfil\hfil
-            \hbox to 0pt\bgroup\hss %\begin{tabular}[t]{c}\@author
+            \hbox to 0pt\bgroup\hss %\begin{tabular}[t]{c}\@author 
             %\end{tabular}
             \outauthor\hss\egroup
             \hfil\hfil\egroup}
@@ -169,7 +155,7 @@
                      \small}
                  {\par
                  \end{quote}}
-
+    
 
 % Sections with less space
 \def\section{\@startsection {section}{1}{\z@}{-1.5ex plus
@@ -214,7 +200,7 @@
    \itemsep \parsep}
 \def\@listiii{\leftmargin\leftmarginiii
     \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
-    \topsep 1pt plus 0.5pt minus 0.5pt
+    \topsep 1pt plus 0.5pt minus 0.5pt 
     \parsep \z@ \partopsep 0.5pt plus 0pt minus 0.5pt
     \itemsep \topsep}
 \def\@listiv{\leftmargin\leftmarginiv
@@ -227,7 +213,7 @@
 
 \abovedisplayskip 7pt plus2pt minus5pt%
 \belowdisplayskip \abovedisplayskip
-\abovedisplayshortskip  0pt plus3pt%
+\abovedisplayshortskip  0pt plus3pt%   
 \belowdisplayshortskip  4pt plus3pt minus3pt%
 
 
@@ -245,6 +231,68 @@
 \def\Huge{\@setsize\Huge{23pt}\xxpt\@xxpt}
 
 
+\usepackage{float}
+\usepackage{caption}
 
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% hyperref package, useful for hyperlinks
+\usepackage{hyperref}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% Sweave(-like)
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{fontshape=sl}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{}
+\DefineVerbatimEnvironment{Scode}{Verbatim}{fontshape=sl}
+\newenvironment{Schunk}{}{}
+\DefineVerbatimEnvironment{Code}{Verbatim}{}
+\DefineVerbatimEnvironment{CodeInput}{Verbatim}{fontshape=sl}
+\DefineVerbatimEnvironment{CodeOutput}{Verbatim}{}
+\newenvironment{CodeChunk}{}{}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{apacite}
+
+\usepackage{color}
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+		\begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+% allow citations to break across lines
+\let\@cite@ofmt\@firstofone
+% avoid brackets around text for \cite:
+\def\@biblabel#1{}
+\def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+{\begin{list}{}{%
+						\setlength{\itemindent}{0pt}
+						\setlength{\leftmargin}{0pt}
+						\setlength{\parsep}{0pt}
+						% turn on hanging indent if param 1 is 1
+						\ifodd #1
+						\setlength{\leftmargin}{\cslhangindent}
+						\setlength{\itemindent}{-1\cslhangindent}
+						\fi
+						% set entry spacing
+						\setlength{\itemsep}{#2\baselineskip}}}
+		{\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 %end COGSCI.STY

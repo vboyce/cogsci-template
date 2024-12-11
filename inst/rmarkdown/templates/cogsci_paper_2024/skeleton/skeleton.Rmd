@@ -1,7 +1,7 @@
 ---
 title: "How to Make a Proceedings Paper Submission"
 bibliography: library.bib
-csl: apa6.csl
+csl: apa7.csl
 document-params: "10pt, letterpaper"
 
 author-information: > 
@@ -22,7 +22,7 @@ abstract: >
 keywords: >
     Add your choice of indexing terms or keywords; kindly use a semi-colon; between each term.
     
-output: cogsci2016::cogsci_paper
+output: cogsci2024::cogsci_paper
 #final-submission: \cogscifinalcopy
 ---
 
