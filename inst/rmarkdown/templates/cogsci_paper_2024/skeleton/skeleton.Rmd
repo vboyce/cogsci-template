@@ -23,7 +23,7 @@ keywords: >
     Add your choice of indexing terms or keywords; kindly use a semi-colon; between each term.
     
 output: cogsci2024::cogsci_paper
-#final-submission: \cogscifinalcopy
+#header-includes: \cogscifinalcopy
 ---
 
 ```{r global_options, include=FALSE}
