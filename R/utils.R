@@ -1,7 +1,7 @@
 
 find_file <- function(template, file) {
     template <- system.file("rmarkdown", "templates", template, file,
-                            package = "cogsci2016")
+                            package = "cogsci2024")
     if (template == "") {
         stop("Couldn't find template file ", template, "/", file, call. = FALSE)
     }
